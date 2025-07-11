@@ -61,7 +61,22 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				/* Landing Page Colors */
+				'dark-bg': 'hsl(var(--dark-bg))',
+				'gold-accent': 'hsl(var(--gold-accent))',
+				'danger-red': 'hsl(var(--danger-red))',
+				'success-green': 'hsl(var(--success-green))',
+				'premium-gray': 'hsl(var(--premium-gray))',
+				'light-section': 'hsl(var(--light-section))'
+			},
+			backgroundImage: {
+				'gradient-dark': 'var(--gradient-dark)',
+				'gradient-gold': 'var(--gradient-gold)'
+			},
+			boxShadow: {
+				'premium': 'var(--shadow-premium)',
+				'glow': 'var(--shadow-glow)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

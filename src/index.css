@@ -36,6 +36,22 @@ All colors MUST be HSL.
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
+    /* Landing Page Design System */
+    --dark-bg: 0 0% 5%;
+    --gold-accent: 45 100% 50%;
+    --danger-red: 0 84% 60%;
+    --success-green: 120 60% 50%;
+    --premium-gray: 210 11% 15%;
+    --light-section: 0 0% 98%;
+    
+    /* Gradients */
+    --gradient-dark: linear-gradient(135deg, hsl(var(--dark-bg)), hsl(var(--premium-gray)));
+    --gradient-gold: linear-gradient(45deg, hsl(var(--gold-accent)), hsl(45 90% 60%));
+    
+    /* Shadows */
+    --shadow-premium: 0 20px 40px -10px hsl(var(--dark-bg) / 0.3);
+    --shadow-glow: 0 0 30px hsl(var(--gold-accent) / 0.3);
+
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
