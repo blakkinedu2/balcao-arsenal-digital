@@ -72,15 +72,22 @@ const RaioXDoBalcao = () => {
         <div className="absolute inset-0 bg-gradient-dark opacity-90"></div>
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Você não é{" "}
-              <span className="line-through text-gray-400">burro(a)</span>.
-              <br />
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-12 leading-tight tracking-tight">
+              <span className="block text-white drop-shadow-2xl">
+                Você não é{" "}
+                <span className="line-through text-gray-400 relative">
+                  burro(a)
+                  <span className="absolute -inset-2 bg-red-500/20 blur-lg"></span>
+                </span>
+                .
+              </span>
+            </h1>
+            <div className="text-3xl md:text-5xl font-bold mb-8 text-gray-300">
               Você só está{" "}
               <span className="text-gold-accent">desarmado(a)</span>.
               <br />
-              <span className="text-2xl md:text-3xl">Por enquanto.</span>
-            </h1>
+              <span className="text-xl md:text-2xl text-gold-accent/80 font-normal">Por enquanto.</span>
+            </div>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
               O manual que os técnicos de celular{" "}
               <span className="text-gold-accent font-bold">REZAM</span> para que você nunca leia está finalmente aqui.
@@ -124,8 +131,12 @@ const RaioXDoBalcao = () => {
                   Mas você <strong>PRECISA</strong> do seu telefone. Então aceita, de cabeça baixa, sentindo que está sendo roubado mas sem saber como se defender.
                 </p>
                 
-                <p className="font-bold text-danger-red">
-                  E se eu te disser que você provavelmente FOI roubado?
+                <p className="font-bold text-danger-red text-xl">
+                  <strong>Você acabou de ser legalmente roubado.</strong>
+                </p>
+                
+                <p className="font-bold text-gray-900 text-lg">
+                  E o pior: <strong>isso vai acontecer de novo</strong> na próxima vez que você precisar de reparo.
                 </p>
               </div>
             </div>
@@ -237,8 +248,38 @@ const RaioXDoBalcao = () => {
 
       {/* Seção 5 - Oferta */}
       <section className="bg-white py-20 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="bg-gray-50 rounded-2xl p-12 border-2 border-danger-red shadow-premium text-center">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-3 gap-8 items-start">
+            
+            {/* Testemunho na lateral */}
+            <div className="lg:order-1 order-2">
+              <Card className="bg-gold-accent/5 border-gold-accent/30 p-6">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gold-accent rounded-full flex items-center justify-center">
+                      <Star className="w-6 h-6 text-white fill-current" />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex mb-2">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 text-gold-accent fill-current" />
+                      ))}
+                    </div>
+                    <p className="text-sm text-gray-700 italic leading-relaxed">
+                      "Usei o Raio-X antes de ir na loja. O técnico ficou visivelmente desconfortável quando fiz as perguntas do manual. <strong>Paguei R$130 a menos</strong> do que no orçamento inicial."
+                    </p>
+                    <p className="text-xs text-gray-600 mt-3 font-medium">
+                      — Marina S., São Paulo
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            {/* Oferta principal */}
+            <div className="lg:col-span-2 lg:order-2 order-1">
+              <div className="bg-gray-50 rounded-2xl p-12 border-2 border-danger-red shadow-premium text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-danger-red mb-6">
               🚨 OFERTA ESPECIAL POR TEMPO LIMITADO 🚨
             </h2>
@@ -265,7 +306,7 @@ const RaioXDoBalcao = () => {
               onClick={handleCTAClick}
               disabled={isLoading}
             >
-              {isLoading ? "PROCESSANDO..." : "🔥 QUERO MEU ARSENAL AGORA!"}
+              {isLoading ? "ATIVANDO..." : "⚡ ATIVAR MEU RAIO-X AGORA"}
             </Button>
 
             <div className="grid md:grid-cols-3 gap-4 mt-8 text-sm text-gray-600">
@@ -286,6 +327,8 @@ const RaioXDoBalcao = () => {
             <p className="text-xs text-gray-500 mt-6">
               💳 Pagamento 100% seguro via Hotmart • Parcelamento disponível
             </p>
+            </div>
+            </div>
           </div>
         </div>
       </section>
@@ -316,9 +359,15 @@ const RaioXDoBalcao = () => {
               </p>
             </div>
 
-            <p className="text-gray-600">
+            <p className="text-gray-600 mb-6">
               O risco é todo meu. Você só tem a ganhar.
             </p>
+            
+            <div className="bg-gray-100 rounded-lg p-4 mb-6">
+              <p className="text-gray-700 italic text-sm">
+                E mesmo assim, tem gente que ainda prefere pagar <strong>R$900 por um display falso</strong> e um <strong>sorriso falso</strong>.
+              </p>
+            </div>
           </div>
 
           <Button 
@@ -328,7 +377,7 @@ const RaioXDoBalcao = () => {
             onClick={handleCTAClick}
             disabled={isLoading}
           >
-            {isLoading ? "PROCESSANDO..." : "🛡️ PROTEGER-ME AGORA COM GARANTIA TOTAL"}
+            {isLoading ? "ARMANDO..." : "🎯 QUERO ARMAMENTO COMPLETO AGORA"}
           </Button>
 
           <div className="mt-8 text-sm text-gray-500">
